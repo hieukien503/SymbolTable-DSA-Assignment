@@ -81,13 +81,6 @@ class SplayTree:
             else:
                 self.__leftRotate(x.parent)
                 self.__rightRotate(x.parent)
-
-    def __searchHelper(self, root: Node, addr: int) -> Node:
-        if root is None or root.addr == addr:
-            return root
-        if root.addr > addr:
-            return self.__searchHelper(root.left, addr)
-        return self.__searchHelper(root.right, addr)
     
     def __searchHelper(self, root: Node, iden: str, stage: int) -> Node:
         if root is None:
